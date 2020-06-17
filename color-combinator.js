@@ -3,33 +3,56 @@
  ******************/
 
 
+// function colorCombinator(color1, color2) {
+//   const firstIsNotAPrimary = color1 !== 'red'
+//     && color1 !== 'yellow'
+//     && color1 !== 'blue';
+//   const secondIsNotAPrimary = color2 !== 'red'
+//     && color2 !== 'yellow'
+//     && color2 !== 'blue';
+
+//   if (firstIsNotAPrimary || secondIsNotAPrimary) {
+//     return 'Sorry, one of those colors is not a primary color!';
+//   }
+
+//   let answer = '';
+//   if (color1 === 'red' && color2 === 'yellow') {
+//     answer = 'orange';
+//   }
+
+//   if (color1 === 'red' && color2 === 'blue') {
+//     answer = 'purple';
+//   }
+
+//   if (color1 === 'yellow' && color2 === 'blue') {
+//     answer = 'green';
+//   }
+
+//   return 'When you combine ' + color1 + ' and ' + color2 + ', you get ' + answer + '!';
+// }
+
 function colorCombinator(color1, color2) {
-  const firstIsNotAPrimary = color1 !== 'red'
-    && color1 !== 'yellow'
-    && color1 !== 'blue';
-  const secondIsNotAPrimary = color2 !== 'red'
-    && color2 !== 'yellow'
-    && color2 !== 'blue';
+  let combined;
+  const colors = color1 + " "  + color2;
 
-  if (firstIsNotAPrimary || secondIsNotAPrimary) {
-    return 'Sorry, one of those colors is not a primary color!';
-  }
+  if(colors.includes("red") && colors.includes("yellow"))
+      combined = "orange";
 
-  let answer = '';
-  if (color1 === 'red' && color2 === 'yellow') {
-    answer = 'orange';
-  }
+  else if(colors.includes("red") && colors.includes("blue"))
+      combined = "purple";
 
-  if (color1 === 'red' && color2 === 'blue') {
-    answer = 'purple';
-  }
+  else if(colors.includes("blue") && colors.includes("yellow"))
+      combined = "green";
 
-  if (color1 === 'yellow' && color2 === 'blue') {
-    answer = 'green';
-  }
+  else 
+      return "Sorry, one of those colors is not a primary color!";
 
-  return 'When you combine ' + color1 + ' and ' + color2 + ', you get ' + answer + '!';
+  return "When you combine " + color1 + " and " + color2 + ", you get " + combined + "!";
 }
+
+module.exports = colorCombinator;
+
+
 
 
 module.exports = colorCombinator;
